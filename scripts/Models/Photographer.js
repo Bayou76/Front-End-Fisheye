@@ -9,32 +9,31 @@ class Photographer {
     this._portrait = data.portrait;
   }
 
-  get id(){
-    return this._id
-  }
-  
-  get name(){
-    return this._name
+  get id() {
+    return this._id;
   }
 
-  get tagline(){
-    return this._tagline
+  get name() {
+    return this._name;
   }
 
-  get city(){
-    return this._city
+  get tagline() {
+    return this._tagline;
   }
 
-  get country(){
-    return this._country
+  get city() {
+    return this._city;
   }
 
-  get price(){
-    return this._price
+  get country() {
+    return this._country;
   }
 
-  get portrait(){
-    return `assets/photographers/${this._portrait}`
+  get price() {
+    return this._price;
   }
 
+  get portrait() {
+    return `assets/photographers/${this._portrait}`;
+  }
 }

@@ -1,5 +1,5 @@
-class PhotographersFactory {
-    constructor(data) {
-        return new Photographer(data)
-    }
+class PhotographerFactory {
+  constructor(data) {
+    return new Photographer(data);
+  }
 }

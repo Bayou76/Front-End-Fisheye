@@ -74,3 +74,47 @@ form input {
     border: none;
     border-radius: 5px;
 }
+
+/* Page Profil */
+
+.photograph-header {
+    margin: 0 100px;
+    padding: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.photograph-header img {
+    height: 200px;
+    width: 200px;
+    object-fit:cover; 
+    border-radius: 50%; 
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 180px
+}
+
+#profil-photographe {
+    display: inline-flex;
+}
+
+#profil-photographe h1 {
+    color: #D3573C;
+    font-size: 36px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+#profil-photographe p {
+    font-size: 1.2em; 
+    color: #901C1C; 
+    margin: 5px; 
+}
+
+#profil-photographe span {
+    font-size: 1em; 
+    margin: 5px; 
+}
