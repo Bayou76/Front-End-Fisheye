@@ -7,13 +7,8 @@ class PhotographeProfil {
   createPhotographeProfil() {
     if (this._idPage == this._photographer.id) {
       const $photographersHeader = document.querySelector(".photograph-header");
-      const profilPhotographer = `
-              <img 
-                alt="${this._photographer.name}"  
-                src="${this._photographer.portrait}"
-              >
+      const profilPhotographer = `              
               
-              <div id="profil-photographe">
                 <div>
                   <h1>${this._photographer.name}</h1>
                   <p>${this._photographer.city} ${this._photographer.country}</p>
@@ -21,7 +16,11 @@ class PhotographeProfil {
                   <span>${this._photographer.tagline}</span>
                 </div>
                   <button class="contact_button"  onclick="displayModal()">Contactez-moi</button>
-              </div>
+              
+              <img 
+                alt="${this._photographer.name}"  
+                src="${this._photographer.portrait}"
+              >
           `;
 
       $photographersHeader.insertAdjacentHTML("beforeend", profilPhotographer);
