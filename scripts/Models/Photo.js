@@ -23,7 +23,7 @@ class Photo {
   }
 
   get image() {
-    return this._image;
+    return `assets/photographers/${this._namePhotographer}/${this._image}`;
   }
 
   get likes() {

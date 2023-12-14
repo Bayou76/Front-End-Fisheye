@@ -110,3 +110,10 @@ form input {
     margin: 5px; 
     color: #666; 
 }
+
+/* photo video */
+
+.list-media img {
+    height: 200px;
+    width: 200px;
+}
