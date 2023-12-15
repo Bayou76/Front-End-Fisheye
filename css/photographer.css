@@ -113,7 +113,14 @@ form input {
 
 /* photo video */
 
-.list-media img {
-    height: 200px;
-    width: 200px;
+.list-media {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.list-media img, .list-media video {
+    height: 350px;
+    width: 350px;
+    border-radius: 5px;
+    object-fit: cover;
 }

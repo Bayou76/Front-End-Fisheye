@@ -8,7 +8,7 @@ class App {
   async main() {
     const photographersData = await this.photographersApi.getPhotographerJSON();
 
-    console.log(photographersData);
+    // console.log(photographersData);
 
     const Photographers = photographersData.map(
       (photographer) => new Photographer(photographer)

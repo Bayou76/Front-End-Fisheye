@@ -9,13 +9,12 @@ class PhotographerPhoto {
     if (this.photo.photographerId == this.idPage) {
       const $sectionList = document.querySelector(".list-media");
       const photoCard = `
-      <br>
+      <figure>
         <a href="#" aria-label="image">
           <img alt="${this.photo.title}" src="${this.photo.image}">
         </a>
-        <div>
-          <span class="titre-photo">${this.photo.title}</span>
-        </div>
+        <figcaption>${this.photo.title} </figcaption>
+      </figure>
       `;
 
       $sectionList.insertAdjacentHTML("beforeend", photoCard);

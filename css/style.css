@@ -44,6 +44,7 @@ h1 {
     color: #D3573C;
     font-size: 36px;
     margin: 0;
+    text-align: center;
 }
 
 .photographer_section article img {
@@ -63,6 +64,7 @@ h1 {
 .photographer_section article p {
     font-size: 1em; 
     margin: 5px; 
+    text-align: center;
 }
 
 .photographer_section article span {
