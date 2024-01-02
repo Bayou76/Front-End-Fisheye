@@ -2,103 +2,121 @@
 <html lang="fr">
   <head>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/91faee3727.js"
       crossorigin="anonymous"
     ></script>
-    <title>Fisheye - photographe </title>
+    <title>Fisheye - photographe</title>
   </head>
+
   <body>
     <header>
       <a href="./index.html">
         <img src="assets/images/logo.png" class="logo" alt="logo" />
-      </a>  
+      </a>
     </header>
 
-    <main id="main">
-      <div class="photograph-header">
-      </div>
+    <main id="main" aria-hidden="false">
+      <div class="photograph-header"></div>
 
-      <section  class="list-media">
-
-      </section>
+      <section class="list-media"></section>
 
       <section id="like-tarif">
-        <span id="tarif" ></span>
+        <span id="tarif"></span>
       </section>
-
     </main>
-
-        <div class="bground">
+    <div class="modal" aria-hidden="true" role="dialog" aria-describedby="modalContact">
       <div class="content">
-        <div id="header-modal">
-          <h2 class="titleForm">Contactez-moi</h2>
-        <span class="close"></span>
-        </div>
-        <span class="nameContact"></span>
-
-        <div class="modalConfirmation">
-          <span>Merci pour votre inscription</span>
-          <button class="btnClose">Fermer</button>
-
-        </div>
-
         <div class="modal-body">
-          
-          <form name="contact" action="" method="get"">
+          <div id="header-modal">
+            <h2 class="titleForm">Contactez-moi</h2>
+            <span class="close"></span>
+          </div>
+          <span class="nameContact"></span>
+          <div class="modalConfirmation">
+            <span>Merci, votre message est envoyé</span>
+            <button class="btnClose">Fermer</button>
+          </div>
+
+          <form name="contact" action="./photographer.html" method="get">
             <div class="formData">
-              <label>Prénom</label><br>
-              <input class="text-control" type="text" id="first" name="first" minlength="2" /><br>
+              <label>Prénom</label><br />
+              <input
+                class="text-control"
+                type="text"
+                id="first"
+                name="first"
+                minlength="2"
+              /><br />
               <p id="firstNameError"><!-- message d'erreur ou valide --></p>
             </div>
             <div class="formData">
-              <label>Nom</label><br>
-              <input class="text-control" type="text" id="last" name="last" /><br>
+              <label>Nom</label><br />
+              <input
+                class="text-control"
+                type="text"
+                id="last"
+                name="last"
+              /><br />
               <p id="lastNameError"><!-- message d'erreur ou valide --></p>
             </div>
             <div class="formData">
-              <label>E-mail</label><br>
-              <input class="text-control" type="email" id="email" name="email" /><br>
+              <label>E-mail</label><br />
+              <input
+                class="text-control"
+                type="email"
+                id="email"
+                name="email"
+              /><br />
               <p id="emailError"><!-- message d'erreur --></p>
             </div>
             <div class="formData">
-              <label>Votre message</label><br>
-              <textarea name="message" id="message" class="text-message" cols="50" rows="10"></textarea>
+              <label>Votre message</label><br />
+              <textarea
+                name="message"
+                id="message"
+                class="text-message"
+                cols="50"
+                rows="10"
+              ></textarea>
               <p id="messageError"><!-- message d'erreur --></p>
             </div>
             <input class="btn-submit button" type="submit" value="Envoyer" />
-            <p id="messageError"><!--message d'erreur --></p>
+            <p id="formError"><!--message d'erreur --></p>
           </form>
         </div>
       </div>
     </div>
 
-     <!-- Factories -->
-     <script src="/scripts/factories/PhotographerProfil.js"></script>
-     <script src="/scripts/factories/Media.js"></script>
+    <!-- Factories -->
+    <script src="/scripts/factories/PhotographerProfil.js"></script>
+    <script src="/scripts/factories/Media.js"></script>
 
-     <!-- Models -->
-     <script src="/scripts/Models/photographer.js"></script>
-     <script src="/scripts/Models/Photo.js"></script>
-     <script src="/scripts/Models/Video.js"></script>
- 
-     <!-- Templates -->
-     <script src="/scripts/templates/Photographer.js"></script>
-     <script src="/scripts/templates/PhotographerPhoto.js"></script>
-     <script src="/scripts/templates/PhotographerVideo.js"></script>
-     <script src="/scripts/templates/LikesTemplate.js"></script>
+    <!-- Models -->
+    <script src="/scripts/Models/photographer.js"></script>
+    <script src="/scripts/Models/Photo.js"></script>
+    <script src="/scripts/Models/Video.js"></script>
 
-     <!-- utils -->
- 
-     <script src="/scripts/utils/contactForm.js"></script>
+    <!-- Templates -->
+    <script src="/scripts/templates/Photographer.js"></script>
+    <script src="/scripts/templates/PhotographerPhoto.js"></script>
+    <script src="/scripts/templates/PhotographerVideo.js"></script>
+    <script src="/scripts/templates/LikesTemplate.js"></script>
 
-     <!-- Api -->
-     <script src="/scripts/api/Api.js"></script>
-     
-     <!-- Entry point -->
-     <script src="/scripts/PhotographerProfil.js"></script>
+    <!-- utils -->
+
+    <script src="/scripts/utils/contactForm.js"></script>
+
+    <!-- Api -->
+    <script src="/scripts/api/Api.js"></script>
+
+    <!-- Entry point -->
+    <script src="/scripts/PhotographerProfil.js"></script>
   </body>
 </html>

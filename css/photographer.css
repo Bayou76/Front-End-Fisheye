@@ -27,7 +27,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 5%;
     margin: 0;
 }
 
@@ -43,7 +42,6 @@
     font-size: 64px;
     font-style: normal;
     margin: 0;
-    padding: 15px 5%;
 }
 
 .button {
@@ -65,7 +63,7 @@
     font-size: 16px;
 }
 
-.bground {
+.modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -154,17 +152,15 @@ input {
     align-items: center;
     font-size: 40px;
     font-weight: normal;
-    height: 700px;
-    padding-top: 200px;
+    height: 150px;
     display: none;
-    margin-top: 150px;
+    margin-top: 50px;
 }
 
 .btnClose {
     background: #901C1C;
-    display: block;
     margin: 0 auto;
-    margin-top: 330px;
+    margin-top: 50px;
     border-radius: 7px;
     font-size: 1rem;
     padding: 12px 82px;

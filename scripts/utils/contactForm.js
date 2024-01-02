@@ -1,16 +1,31 @@
 // Ouverture et Fermeture de la modale
 
+const modal = document.querySelector(".modal");
+const closeBtn = document.querySelector(".close");
+let lastFocusElement ;
+
 function displayModal() {
-  const modal = document.querySelector(".bground");
+  lastFocusElement = document.activeElement;
   modal.style.display = "block";
+  modal.setAttribute('aria-hidden', 'false');
+  closeBtn.focus();
 }
 
 function closeModal() {
-  const modal = document.querySelector(".bground");
   modal.style.display = "none";
+  modal.setAttribute('aria-hidden', 'true');
+  if(lastFocusElement){
+    lastFocusElement.focus();
+  }
+  console.log(lastFocusElement);
 }
 
-const closeBtn = document.querySelector(".close");
+document.body.addEventListener("keydown", e => {
+  if (modal.getAttribute('aria-hidden') === 'false' && e.key === "Escape") {
+    closeModal();
+  }
+});
+
 closeBtn.addEventListener("click", closeModal);
 
 // Condition de validation des input
@@ -96,8 +111,6 @@ function validatedMessage() {
     return true;
   } else {
     message.style.border = "solid 2px darkred";
-    message.style.backgroundColor = "#901C1C";
-    message.style.color = "white";
     messageError.textContent = "Veuillez entrer 2 caractères ou plus";
     messageError.style.color = "red";
     messageError.style.fontSize = "12px";
@@ -115,6 +128,7 @@ const btnSend = document.querySelector(".btn-submit");
 const btnCloseConfirm = document.querySelector(".btnClose");
 const modalConfirmation = document.querySelector(".modalConfirmation");
 const form = document.querySelector("form");
+const formError = document.getElementById("formError");
 
 btnSend.addEventListener("click", (e) => {
   e.preventDefault();
@@ -127,21 +141,36 @@ btnSend.addEventListener("click", (e) => {
   ) {
     modalConfirmation.style.display = "block";
     form.style.display = "none";
+    console.log("Prénom: " + firstName.value);
+    console.log("Nom: " + lastName.value);
+    console.log("Adresse mail: " + email.value);
+    console.log("Message: " + message.value);
   } else {
-    messageError.textContent = " Merci de bien remplir le formulaire de contact";
-    messageError.style.fontSize = "15px";
-    messageError.style.color = "red";
+    formError.textContent = " Merci de bien remplir le formulaire de contact";
+    formError.style.fontSize = "15px";
+    formError.style.color = "red";
   }
 });
 
 btnCloseConfirm.addEventListener("click", () => {
-  window.location.reload();
+  modal.style.display = "none";
+  modalConfirmation.style.display = "none";
+
+  firstName.value = "";
+  lastName.value = "";
+  email.value = "";
+  message.value = "";
+
+  resetError(firstName, firstNameError);
+  resetError(lastName, lastNameError);
+  resetError(email, emailError);
+  resetError(message, messageError);
+  form.style.display = "block";
 });
 
-//affichage des inputs dans la console
-btnSend.addEventListener("click", function () {
-  console.log("Prénom: " + firstName.value);
-  console.log("Nom: " + lastName.value);
-  console.log("Adresse mail: " + email.value);
-  console.log("Message: " + message.value);
-});
+function resetError(style, error) {
+  style.style.border = "";
+  style.style.backgroundColor = "";
+  style.style.color = "";
+  error.textContent = "";
+}
