@@ -27,6 +27,16 @@ class Api {
     }
   }
 
+  async getLikesJSON(){
+    try {
+      const response = await fetch(this._url);
+      const data = await response.json();
+      return data.media;
+    } catch (err) {
+      throw new err;
+    }
+  }
+
 }
 
 class PhotographerApi extends Api {
@@ -44,6 +54,10 @@ class PhotographerApi extends Api {
 
   async getMedia(){
     return await this.getMediaJSON();
+  }
+
+  async getLikes(){
+    return await this.getLikesJSON();
   }
 
 }

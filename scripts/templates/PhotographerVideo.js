@@ -16,7 +16,13 @@ class PhotographerVideo {
                   <source src="${this.photo.video}" type="video/mp4" >
                 </video>
               </a>
-              <figcaption>${this.photo.title} </figcaption>
+              <figcaption>
+                <p>${this.photo.title} </p>
+                <div class="like like-${this.photo.id}">
+                  <span id="like-${this.photo.id}">${this.photo.likes}</span>
+                  <span class="like-coeur" aria-label="likes"><i class="fa-solid fa-heart"></i></span>
+                </div>
+              </figcaption>
             </figure>
               `;
 

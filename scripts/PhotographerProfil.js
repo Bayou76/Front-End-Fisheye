@@ -2,7 +2,8 @@ class App {
   constructor() {
     this.$photograppheHeader = document.querySelector(".photograph-header");
     this.$sectionList = document.querySelector(".list-media");
-
+    this.$like = document.getElementById("like-tarif");
+    this.$tarif = document.getElementById("tarif");
     
     this.photographersApi = new PhotographerApi("/data/photographers.json");
   }
@@ -11,6 +12,10 @@ class App {
     const idURL = new URL(window.location.href).searchParams.get("id");
     // console.log(idURL);
     const namePhotographer = this.getNamePhotographer(idURL);
+
+    // nom du dormulaire de contact
+
+    document.querySelector(".nameContact").innerHTML = namePhotographer;
 
     // profil header
     const photographersData = await this.photographersApi.getPhotographer();
@@ -21,6 +26,9 @@ class App {
     Photographe.forEach((photographe) => {
       const ProfilTemplate = new PhotographeProfil(photographe, idURL);
       this.$photograppheHeader.append(ProfilTemplate.createPhotographeProfil());
+      if (photographe.id == idURL){
+        this.$tarif.append(`${photographe.price} € / jour`)
+      }
     });
 
     // profil galeries
@@ -39,28 +47,42 @@ class App {
         }
      
     });
+
+    let Likes = await this.photographersApi.getLikes();
+    console.log(Likes);
+    let nbLikeTotal = 0;
+        Likes.forEach(like => {
+            if (like.photographerId == idURL) {
+                nbLikeTotal += like.likes;
+            }
+            // console.log(nbLikeTotal);
+        });
+        let TemplateL = new LikeTemplateProfil(nbLikeTotal);
+        this.$like.append(
+          TemplateL.LikeTemplate()
+        );
   }
 
   getNamePhotographer(idURL) {
     let namePhotographe = "";
     switch (idURL) {
       case "243":
-        namePhotographe = "Mimi";
+        namePhotographe = "Mimi Kell";
         break;
       case "930":
-        namePhotographe = "Ellie Rose";
+        namePhotographe = "Ellie-Rose Wilkens";
         break;
       case "82":
-        namePhotographe = "Tracy";
+        namePhotographe = "Tracy Galindo";
         break;
       case "527":
-        namePhotographe = "Nabeel";
+        namePhotographe = "Nabeel Bradford";
         break;
       case "925":
-        namePhotographe = "Rhode";
+        namePhotographe = "Rhode Dubois";
         break;
       case "195":
-        namePhotographe = "Marcel";
+        namePhotographe = "Marcel Nikolic";
         break;
       default:
         break;

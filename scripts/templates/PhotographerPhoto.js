@@ -15,10 +15,10 @@ class PhotographerPhoto {
         </a>
         <figcaption>
           <p>${this.photo.title}</p> 
-          <span class="like like-${this.photo.id}">
-                        <span id="like-${this.photo.id}">${this.photo.likes}</span>
-                        <span class="like-coeur" aria-label="likes"></span>
-                    </span>
+          <div class="like like-${this.photo.id}">
+              <span id="like-${this.photo.id}">${this.photo.likes}</span>
+              <span class="like-coeur" aria-label="likes"><i class="fa-solid fa-heart"></i></span>
+          </div>
         </figcaption>
       </figure>
       `;

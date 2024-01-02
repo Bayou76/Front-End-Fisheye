@@ -21,69 +21,170 @@
     cursor: pointer;
 }
 
-.modal {
-    border-radius: 5px;
-    background-color: #DB8876;
-    width: 50%;
+/* Modal form */
+
+#header-modal {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 35px;
-    margin: auto;
+    padding: 0 5%;
+    margin: 0;
 }
 
-.modal header {
-    justify-content: space-between;
-    width: 100%;
-}
-
-.modal header img {
-    cursor: pointer;
-}
-
-.modal header h2 {
+.titleForm {
+    font-family: DM Sans;
     font-size: 64px;
-    font-weight: normal;
-    text-align: center;
+    font-style: normal;
+    margin: 0;
 }
 
-form {
-    display: flex;
+.nameContact {
+    font-family: DM Sans;
+    font-size: 64px;
+    font-style: normal;
+    margin: 0;
+    padding: 15px 5%;
+}
+
+.button {
+    background: #901C1C;
+    margin-top: 0.5em;
+    padding: 1em;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.button:hover {
+    background: #DB8876;
+    border-color: #901C1C;
+}
+
+.smFont {
+    font-size: 16px;
+}
+
+.bground {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
     width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
+    overflow: auto;
+    background: rgba(196, 196, 196, 0.40);
 }
 
-form label {
-    color: #312E2E;
+.content {
+    margin: 2% auto;
+    width: 100%;
+    max-width: 670px;
+    background: #DB8876;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    padding-top: 10px;
+}
+
+.modal-body {
+    padding: 15px 5%;
+}
+
+label {
+    font-family: DM Sans;
     font-size: 36px;
 }
 
-form div {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: self-start;
-    margin-bottom: 26px;
+input {
+    padding: 8px;
+    border: 0.8px solid #ccc;
+    outline: none;
 }
 
-form input {
-    width: 100%;
-    height: 68px;
-    border: none;
+.text-control {
+    margin: 0;
+    padding: 8px;
+    width: 95%;
     border-radius: 5px;
+    font-size: 20px;
+    height: 48px;
+}
+
+.text-message {
+    margin: 0;
+    padding: 8px;
+    width: 95%;
+    border-radius: 5px;
+    font-size: 20px;
+    height: 80px;
+}
+
+.close {
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(0.7);
+}
+
+.close:before,
+.close:after {
+    position: absolute;
+    left: 15px;
+    content: " ";
+    height: 36px;
+    width: 5px;
+    background-color: #fff;
+}
+
+.close:before {
+    transform: rotate(45deg);
+}
+
+.close:after {
+    transform: rotate(-45deg);
+}
+
+.modalConfirmation {
+    display: none;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: normal;
+    height: 700px;
+    padding-top: 200px;
+    display: none;
+    margin-top: 150px;
+}
+
+.btnClose {
+    background: #901C1C;
+    display: block;
+    margin: 0 auto;
+    margin-top: 330px;
+    border-radius: 7px;
+    font-size: 1rem;
+    padding: 12px 82px;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
 }
 
 /* Page Profil */
+main {
+    padding: 0 100px;
+}
 
 .photograph-header {
-    padding: 50px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 50px;
     margin-bottom: 70px;
-    padding: 0;
+
 }
 
 .photograph-header img {
@@ -116,6 +217,23 @@ form input {
     margin: 0;
 }
 
+/* encart qui affiche le tarif journalier */
+
+#like-tarif {
+    background-color: #DB8876;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    bottom: 0;
+    font-size: 17px;
+    padding: 15px 20px;
+    right: 35px;
+    width: 250px;
+    position: fixed;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
 /* photo video */
 
 .list-media {
@@ -141,8 +259,20 @@ form input {
     justify-content: space-between;
     align-items: center;
     padding: 5px;
+    font-size: 17px;
+    font-family: "DM Sans", sans-serif;
 }
 
-.list-media figcaption P{
+.list-media figcaption P {
     margin: 0;
+}
+
+.like {
+    color: #901C1C;
+    font-size: 20px;
+}
+
+.like-coeur {
+    width: 21px;
+    height: 24px;
 }
