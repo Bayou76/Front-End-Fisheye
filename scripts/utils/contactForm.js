@@ -17,7 +17,6 @@ function closeModal() {
   if(lastFocusElement){
     lastFocusElement.focus();
   }
-  console.log(lastFocusElement);
 }
 
 document.body.addEventListener("keydown", e => {

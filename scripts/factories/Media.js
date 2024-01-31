@@ -3,22 +3,22 @@ class MediaFactory {
     let nomPhotographe = "";
     switch (idURL) {
       case "243":
-        nomPhotographe = "Mimi";
+        nomPhotographe = "Mimi Kell";
         break;
       case "930":
-        nomPhotographe = "Ellie Rose";
+        nomPhotographe = "Ellie-Rose Wilkens";
         break;
       case "82":
-        nomPhotographe = "Tracy";
+        nomPhotographe = "Tracy Galindo";
         break;
       case "527":
-        nomPhotographe = "Nabeel";
+        nomPhotographe = "Nabeel Bradford";
         break;
       case "925":
-        nomPhotographe = "Rhode";
+        nomPhotographe = "Rhode Dubois";
         break;
       case "195":
-        nomPhotographe = "Marcel";
+        nomPhotographe = "Marcel Nikolic";
         break;
       default:
         break;

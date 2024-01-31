@@ -7,8 +7,10 @@ class LikeTemplateProfil {
     const $template = document.getElementById("like-tarif");
 
     let profilLikes = `
-            <span id="likes"> ${this._nbLikeTotal} <i class="fa-solid fa-heart"></i> </span> 
-
+            <span id="likes">
+              <span id="likes-count">${this._nbLikeTotal}</span>
+              <i class="fa-solid fa-heart" aria-hidden="true"></i>
+            </span>
         `;
     $template.insertAdjacentHTML("afterbegin", profilLikes);
     return $template.lastChild;

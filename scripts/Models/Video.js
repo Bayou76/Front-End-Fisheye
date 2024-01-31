@@ -23,7 +23,7 @@ class Video {
     }
 
     get video() {
-        return `assets/photographers/${this._namePhotographer}/${this._video}`;
+        return this._video;
     }
 
     get likes() {
