@@ -1,17 +1,17 @@
 class PhotographerVideo {
-  static currentTabIndex = 14;
-  constructor(photo, idURL, namePhotographer) {
-    this.photo = photo;
-    this._idPage = idURL;
-    this._namePhotographer = namePhotographer;
+	static currentTabIndex = 14;
+	constructor(photo, idURL, namePhotographer) {
+		this.photo = photo;
+		this._idPage = idURL;
+		this._namePhotographer = namePhotographer;
     
-  }
+	}
 
-  createPhotographerPortfolio() {
-    if (`${this.photo.photographerId}` == this._idPage) {
-      const $sectionList = document.querySelector(".list-media");
+	createPhotographerPortfolio() {
+		if (`${this.photo.photographerId}` == this._idPage) {
+			const $sectionList = document.querySelector(".list-media");
 
-      const photoCard = `
+			const photoCard = `
             <figure tabindex="${PhotographerPhoto.currentTabIndex++}">
               <a href="#" aria-label="Voir la vidéo '${this.photo.title}'" onclick="openLightbox(this)">
                 <video class="video" title="${this.photo.title}" controls>
@@ -29,10 +29,10 @@ class PhotographerVideo {
             </figure>
               `;
 
-      $sectionList.insertAdjacentHTML("beforeend", photoCard);
-      return $sectionList.lastChild;
-    } else {
-      return "";
-    }
-  }
+			$sectionList.insertAdjacentHTML("beforeend", photoCard);
+			return $sectionList.lastChild;
+		} else {
+			return "";
+		}
+	}
 }

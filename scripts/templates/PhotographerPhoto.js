@@ -1,15 +1,15 @@
 class PhotographerPhoto {
-  static currentTabIndex = 14;
-  constructor(photo, idURL, namePhotographer) {
-    this.photo = photo;
-    this.idPage = idURL;
-    this._namePhotographer = namePhotographer;
-  }
+	static currentTabIndex = 14;
+	constructor(photo, idURL, namePhotographer) {
+		this.photo = photo;
+		this.idPage = idURL;
+		this._namePhotographer = namePhotographer;
+	}
 
-  createPhotographerPortfolio() {
-    if (this.photo.photographerId == this.idPage) {
-      const $sectionList = document.querySelector(".list-media");
-      const photoCard = `
+	createPhotographerPortfolio() {
+		if (this.photo.photographerId == this.idPage) {
+			const $sectionList = document.querySelector(".list-media");
+			const photoCard = `
       <figure tabindex="${PhotographerPhoto.currentTabIndex++}" id="photo">
         <a href="#" role="button" aria-label="Ouvrir ${this.photo.title} dans la lightbox" onclick="openLightbox(this)">
           <img alt="illutration : ${this.photo.title}" src="assets/photographers/${this._namePhotographer}/${this.photo.image}">
@@ -24,19 +24,19 @@ class PhotographerPhoto {
       </figure>
       `;
 
-      $sectionList.insertAdjacentHTML("beforeend", photoCard);
-      const newPhotoFigure = $sectionList.lastElementChild; 
+			$sectionList.insertAdjacentHTML("beforeend", photoCard);
+			const newPhotoFigure = $sectionList.lastElementChild; 
 
-      // Ajouter un écouteur d'événement pour gérer la touche 'Entrer'
-      newPhotoFigure.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') {
-          openLightbox(newPhotoFigure);
-        }
-      });
+			// Ajouter un écouteur d'événement pour gérer la touche 'Entrer'
+			newPhotoFigure.addEventListener("keydown", (event) => {
+				if (event.key === "Enter") {
+					openLightbox(newPhotoFigure);
+				}
+			});
 
-      return newPhotoFigure;
-    } else {
-      return "";
-    }
-  }
+			return newPhotoFigure;
+		} else {
+			return "";
+		}
+	}
 }

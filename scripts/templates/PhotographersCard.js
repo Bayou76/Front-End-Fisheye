@@ -1,14 +1,14 @@
 class photographerTemplate {
-  constructor(photographer) {
-    this._photographer = photographer;
-  }
+	constructor(photographer) {
+		this._photographer = photographer;
+	}
 
-  createPhotographerCard() {
-    const $photographersSection = document.querySelector(
-      ".photographer_section"
-    );
+	createPhotographerCard() {
+		const $photographersSection = document.querySelector(
+			".photographer_section"
+		);
 
-    const photographerCard = `
+		const photographerCard = `
             <article tabindex="3">
               <a href="photographer.html?id=${this._photographer.id}" aria-label="Lien vers le portfolio  ${this._photographer.name}">
                   <img
@@ -24,14 +24,14 @@ class photographerTemplate {
             </article>
         `;
 
-    $photographersSection.insertAdjacentHTML("beforeend", photographerCard);
-    const cardElement = $photographersSection.lastChild;
+		$photographersSection.insertAdjacentHTML("beforeend", photographerCard);
+		const cardElement = $photographersSection.lastChild;
 
-  cardElement.addEventListener("keypress", (event) => {
-    if (event.key === 'Enter') {
-      window.location.href = `photographer.html?id=${this._photographer.id}`;
-    }
-  });
-  return cardElement;
-  }
+		cardElement.addEventListener("keypress", (event) => {
+			if (event.key === "Enter") {
+				window.location.href = `photographer.html?id=${this._photographer.id}`;
+			}
+		});
+		return cardElement;
+	}
 }

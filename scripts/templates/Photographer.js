@@ -1,14 +1,14 @@
 class PhotographeProfil {
-  constructor(photographer, idURL) {
-    this._photographer = photographer;
-    this._idPage = idURL;
-  }
+	constructor(photographer, idURL) {
+		this._photographer = photographer;
+		this._idPage = idURL;
+	}
 
-  createPhotographeProfil() {
-    if (this._idPage == this._photographer.id) {
-      const $photographersHeader = document.querySelector(".photograph-header");
+	createPhotographeProfil() {
+		if (this._idPage == this._photographer.id) {
+			const $photographersHeader = document.querySelector(".photograph-header");
       
-      const profilPhotographer = `              
+			const profilPhotographer = `              
                 <div >
                   <h1>${this._photographer.name}</h1>
                   <p>${this._photographer.city} ${this._photographer.country}</p>
@@ -25,10 +25,10 @@ class PhotographeProfil {
               </div>
           `;
 
-      $photographersHeader.insertAdjacentHTML("beforeend", profilPhotographer);
-      return $photographersHeader.lastChild;
-    } else {
-      return "";
-    }
-  }
+			$photographersHeader.insertAdjacentHTML("beforeend", profilPhotographer);
+			return $photographersHeader.lastChild;
+		} else {
+			return "";
+		}
+	}
 }
