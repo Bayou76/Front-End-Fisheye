@@ -18,7 +18,11 @@
   <body>
     <header>
       <a tabindex="0" href="./index.html">
-        <img src="assets/images/logo.png" class="logo" alt="Retour à la page d'accueil Fisheye" />
+        <img
+          src="assets/images/logo.png"
+          class="logo"
+          alt="Retour à la page d'accueil Fisheye"
+        />
       </a>
     </header>
 
@@ -29,34 +33,48 @@
         <h2 id="sortLabel">Trier par:</h2>
         <div class="sort-wrapper">
           <div tabindex="11" class="sortSelect popularity" value="popularity">
-            Popularité  <i class="fa-solid fa-angle-up"></i>
-            <ul id="sort" aria-labelledby="sortLabel">
-              <li tabindex="12" class="sortSelect" value="date">Date</li>
-              <li tabindex="13" class="sortSelect" value="title">Titre</li>
-            </ul>
+            Popularité <em class="fa-solid fa-angle-up"></em>
           </div>
+          <ul id="sort" aria-labelledby="sortLabel">
+            <li tabindex="12" class="sortSelect" value="date">Date</li>
+            <li tabindex="13" class="sortSelect" value="title">Titre</li>
+          </ul>
         </div>
       </div>
-      
 
       <section class="list-media" aria-labelledby="mediaListHeading"></section>
       <section id="like-tarif" aria-label="Likes et tarifs">
         <span id="tarif"></span>
       </section>
 
-      <section id="lightbox" aria-modal="true" role="dialog" aria-hidden="true" aria-label="Vue agrandie des médias">
+      <section
+        id="lightbox"
+        aria-modal="true"
+        role="dialog"
+        aria-hidden="true"
+        aria-label="Vue agrandie des médias"
+      >
         <div class="contenu-lightbox">
           <span
             tabindex=""
             class="close-lightbox"
             aria-label="Fermer la modal"
             onclick="closeLightbox()"
-            ><i class="fa-solid fa-xmark"></i
-          ></span>
-          <span tabindex="" class="fleche" aria-label="Image précédente" id="fleche-gauche"
+          >
+            <em class="fa-solid fa-xmark"></em>
+          </span>
+          <span
+            tabindex=""
+            class="fleche"
+            aria-label="Image précédente"
+            id="fleche-gauche"
             >&#10094;</span
           >
-          <span tabindex="" class="fleche" aria-label="Image suivante" id="fleche-droite"
+          <span
+            tabindex=""
+            class="fleche"
+            aria-label="Image suivante"
+            id="fleche-droite"
             >&#10095;</span
           >
           <div class="photo-titre-lightbox">
@@ -66,7 +84,13 @@
         </div>
       </section>
 
-      <div class="modal" aria-hidden="true" role="dialog" aria-labelledby="contactFormTitle" aria-describedby="contactFormDescription">
+      <div
+        class="modal"
+        aria-hidden="true"
+        role="dialog"
+        aria-labelledby="contactFormTitle"
+        aria-describedby="contactFormDescription"
+      >
         <div class="content">
           <div class="modal-body">
             <div id="header-modal">
@@ -81,9 +105,9 @@
 
             <form name="contact" action="./photographer.html" method="get">
               <div class="formData">
-                <label>Prénom</label><br />
+                <label for="first">Prénom</label><br />
                 <input
-                aria-label="Taper votre prénom"
+                  aria-label="Taper votre prénom"
                   tabindex="4"
                   class="text-control"
                   type="text"
@@ -94,9 +118,9 @@
                 <p id="firstNameError"><!-- message d'erreur ou valide --></p>
               </div>
               <div class="formData">
-                <label>Nom</label><br />
+                <label for="last">Nom</label><br />
                 <input
-                aria-label="Taper votre nom"
+                  aria-label="Taper votre nom"
                   tabindex="5"
                   class="text-control"
                   type="text"
@@ -106,9 +130,9 @@
                 <p id="lastNameError"><!-- message d'erreur ou valide --></p>
               </div>
               <div class="formData">
-                <label>E-mail</label><br />
+                <label for="email">E-mail</label><br />
                 <input
-                aria-label="Taper votre email"
+                  aria-label="Taper votre email"
                   tabindex="6"
                   class="text-control"
                   type="email"
@@ -118,9 +142,9 @@
                 <p id="emailError"><!-- message d'erreur --></p>
               </div>
               <div class="formData">
-                <label>Votre message</label><br />
+                <label for="message">Votre message</label><br />
                 <textarea
-                aria-label="Taper votre message"
+                  aria-label="Taper votre message"
                   tabindex="7"
                   name="message"
                   id="message"

@@ -9,7 +9,7 @@ class photographerTemplate {
 		);
 
 		const photographerCard = `
-            <article tabindex="3">
+            <article tabindex="3" aria-label="${this._photographer.name}">
               <a href="photographer.html?id=${this._photographer.id}" aria-label="Lien vers le portfolio  ${this._photographer.name}">
                   <img
                       alt="${this._photographer.name}"

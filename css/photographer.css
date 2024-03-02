@@ -11,10 +11,6 @@
   margin-right: 10px;
 }
 
-#sort{
-  margin-left: -25px;
-}
-
 .sort-options {
   font-family: "DM sans", sans-serif;
   display: flex;
@@ -23,12 +19,13 @@
 .sortSelect {
   cursor: pointer;
   background: #901c1c;
+  border-bottom: 2px solid white;
   color: white;
   padding: 10px;
   margin-bottom: 0px;
   width: 150px;
-  margin-left: 15px;
 }
+
 
 .popularity {
   margin-top: 15px;
@@ -42,22 +39,39 @@
   display: block;
 }
 
+.sort-wrapper {
+  position: relative;
+}
+
 .sort-wrapper ul {
   display: none;
   position: absolute;
+  left: 0;
+  background: #901c1c;
   width: 150px;
-  margin-top: 10px; /* Ajustez en fonction de votre mise en page */
-  padding-left: 0; /* Enlève le padding par défaut des listes */
+  border-radius: 5px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
 }
 
 .sort-wrapper ul li {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.sort-wrapper ul li:hover {
+  background: #751616;
+}
+
+.sort-wrapper:hover ul {
   display: block;
-  border-top: 2px solid white;
 }
 
 .sort-wrapper ul li:last-child {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  border-bottom: none;
 }
 
 
